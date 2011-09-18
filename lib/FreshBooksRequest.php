@@ -3,7 +3,7 @@ require_once('XmlDomConstruct.php');
 /**
  * A simple PHP API wrapper for the FreshBooks API.
  * All post vars can be found on the developer site: http://developers.freshbooks.com/
- * Stay up to date on Github: 
+ * Stay up to date on Github: https://github.com/jboesch/FreshBooksRequest-PHP-API
  *
  * PHP version 5
  *
