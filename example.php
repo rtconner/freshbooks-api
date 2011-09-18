@@ -46,7 +46,6 @@ else
 /**********************************************
  * Create a recurring profile with multiple line items
  **********************************************/
-
 $fb = new FreshBooksRequest('recurring.create');
 $fb->post(array(
     'recurring' => array(
