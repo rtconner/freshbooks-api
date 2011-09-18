@@ -37,6 +37,11 @@ if($fb->success())
 {
     print_r($fb->getResponse());
 }
+else
+{
+    echo $fb->getError();
+    print_r($fb->getResponse());
+}
 
 /**********************************************
  * Create a recurring profile with multiple line items
@@ -71,5 +76,10 @@ if($fb->success())
     $res = $fb->getResponse();
     $recurrng_id = $res['recurring_id'];
     // Do something with the recurring_id you were returned
+}
+else
+{
+    echo $fb->getError();
+    print_r($fb->getResponse());
 }
 ?>
