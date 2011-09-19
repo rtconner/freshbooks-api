@@ -13,7 +13,7 @@ require('lib/FreshBooksRequest.php');
 
 $domain = 'your-subdomain'; // https://your-subdomain.freshbooks.com/
 $token = '1234567890'; // your api token found in your account
-FreshBooks::init($domain, $token);
+FreshBooksRequest::init($domain, $token);
 ```
 * Now let's say we want to list clients with an email of some@email.com
 
