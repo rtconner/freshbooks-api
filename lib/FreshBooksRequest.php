@@ -11,7 +11,7 @@ require_once('XmlDomConstruct.php');
  * @license    Dual licensed under the MIT and GPL licenses.
  * @version    1.0
  */
-
+class FreshBooksRequestException extends Exception {}
 class FreshBooksRequest {
 
     /*
@@ -152,8 +152,7 @@ class FreshBooksRequest {
 
         if(!self::$_domain || !self::$_token)
         {
-            $this->_error = 'You need to call FreshBooks::init($domain, $token) with your domain and token.';
-            return;
+            throw new FreshBooksRequestException('You need to call FreshBooks::init($domain, $token) with your domain and token.');
         }
 
         $post_data = $this->getGeneratedXML();
