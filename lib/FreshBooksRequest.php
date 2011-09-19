@@ -152,7 +152,7 @@ class FreshBooksRequest {
 
         if(!self::$_domain || !self::$_token)
         {
-            throw new FreshBooksRequestException('You need to call FreshBooks::init($domain, $token) with your domain and token.');
+            throw new FreshBooksRequestException('You need to call FreshBooksRequest::init($domain, $token) with your domain and token.');
         }
 
         $post_data = $this->getGeneratedXML();
