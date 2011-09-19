@@ -175,7 +175,7 @@ class FreshBooksRequest {
         }
         else
         {
-           curl_close($ch);
+            curl_close($ch);
         }
 
         $response = json_decode(json_encode(simplexml_load_string($result)), true);
