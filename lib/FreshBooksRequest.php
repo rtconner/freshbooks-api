@@ -143,9 +143,10 @@ class FreshBooksRequest {
     }
 
     /*
-     * Send the request over the wire
+     * Send the request over the wire. Return result will be binary data if the FreshBooks response is
+     * a PDF, array if it is a normal request.
      *
-     * @return binary data if response is a PDF, array if not
+     * @return mixed
      */
     public function request()
     {
@@ -178,13 +179,16 @@ class FreshBooksRequest {
         }
 
         // With the new invoice.getPDF request, we sometimes have non-XML come through here
-        if (substr($result, 0, 4) == "%PDF"){
-          // it's a PDF file
-          $response = $result;
-          $this->_success = true;
-        } else {
-          $response = json_decode(json_encode(simplexml_load_string($result)), true);
-          $this->_success = ($response['@attributes']['status'] == 'ok');
+        if (substr($result, 0, 4) == "%PDF")
+        {
+            // it's a PDF file
+            $response = $result;
+            $this->_success = true;
+        }
+        else
+        {
+            $response = json_decode(json_encode(simplexml_load_string($result)), true);
+            $this->_success = ($response['@attributes']['status'] == 'ok');
         }
 
         $this->_response = $response;
