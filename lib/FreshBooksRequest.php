@@ -72,7 +72,7 @@ class FreshBooksRequest {
     /*
      * Set up the request object and assign a method name
      *
-     * @param array $method The method name from the API, like 'client.update' etc
+     * @param string $method The method name from the API, like 'client.update' etc
      * @return null
      */
     public function __construct($method)
