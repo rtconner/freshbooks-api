@@ -1,7 +1,5 @@
 <?php
 namespace JasonReading\Freshbooks;
-use JasonReading\Freshbooks\FreshBooksRequestException;
-use JasonReading\Freshbooks\XmlDomConstruct;
 
 /**
  * A simple PHP API wrapper for the FreshBooks API.
