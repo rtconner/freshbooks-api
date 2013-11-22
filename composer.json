@@ -13,6 +13,8 @@
         }
     ],
     "autoload": {
-        "psr-0": { "JasonReading\\Freshbooks\\": "src/" }
+        "psr-0": {
+            "JasonReading\\Freshbooks\\": "lib\/"
+        }
     }
 }
