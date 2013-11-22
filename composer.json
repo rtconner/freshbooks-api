@@ -13,6 +13,6 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Freshbooks": "src/" }
+        "psr-0": { "Freshbooks\\": "src/" }
     }
 }
