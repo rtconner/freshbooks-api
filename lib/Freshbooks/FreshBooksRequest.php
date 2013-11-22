@@ -1,5 +1,8 @@
 <?php
-require_once('XmlDomConstruct.php');
+namespace JasonReading\Freshbooks;
+use JasonReading\Freshbooks\FreshBooksRequestException;
+use JasonReading\Freshbooks\XmlDomConstruct;
+
 /**
  * A simple PHP API wrapper for the FreshBooks API.
  * All post vars can be found on the developer site: http://developers.freshbooks.com/
@@ -11,7 +14,6 @@ require_once('XmlDomConstruct.php');
  * @license    Dual licensed under the MIT and GPL licenses.
  * @version    1.0
  */
-class FreshBooksRequestException extends Exception {}
 class FreshBooksRequest {
 
     /*
