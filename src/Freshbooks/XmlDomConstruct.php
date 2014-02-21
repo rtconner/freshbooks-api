@@ -1,5 +1,8 @@
 <?php namespace Freshbooks;
 
+use DOMDocument;
+use DOMElement;
+
 /**
  * EXTENDS THE DOMDOCUMENT TO IMPLEMENT PERSONAL (UTILITY) METHODS.
  *
