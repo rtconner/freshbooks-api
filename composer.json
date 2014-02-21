@@ -1,7 +1,7 @@
 {
     "name": "rtconner/freshbooks-api",
     "description": "Wrapper to the FreshBooks API",
-    "license": "Dual-licesnse: MIT and GPL",
+    "license": "MIT",
 	"keywords": ["freshbooks", "api"],
     "authors": [
         {
