@@ -1,7 +1,4 @@
-<?php
-namespace JasonReading\Freshbooks;
-use JasonReading\Freshbooks\FreshBooksRequestException;
-use JasonReading\Freshbooks\XmlDomConstruct;
+<?php namespace Freshbooks;
 
 /**
  * A simple PHP API wrapper for the FreshBooks API.
@@ -14,7 +11,7 @@ use JasonReading\Freshbooks\XmlDomConstruct;
  * @license    Dual licensed under the MIT and GPL licenses.
  * @version    1.0
  */
-class FreshBooksRequest {
+class FreshBooksApi {
 
     /*
      * The domain you need when making a request
@@ -28,13 +25,13 @@ class FreshBooksRequest {
 
     /*
      * The API url we're hitting. {{ DOMAIN }} will get replaced with $domain
-     * when you set FreshBooksRequest::init($domain, $token)
+     * when you set FreshBooksApi::init($domain, $token)
      */
     protected $_api_url = 'https://{{ DOMAIN }}.freshbooks.com/api/2.1/xml-in';
 
     /*
      * Stores the current method we're using. Example:
-     * new FreshBooksRequest('client.create'), 'client.create' would be the method
+     * new FreshBooksApi('client.create'), 'client.create' would be the method
      */
     protected $_method = '';
 
@@ -155,7 +152,7 @@ class FreshBooksRequest {
 
         if(!self::$_domain || !self::$_token)
         {
-            throw FreshBooksRequestException('You need to call FreshBooksRequest::init($domain, $token) with your domain and token.');
+            throw FreshBooksApiException('You need to call FreshBooksApi::init($domain, $token) with your domain and token.');
         }
 
         $post_data = $this->getGeneratedXML();

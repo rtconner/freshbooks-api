@@ -1,15 +1,16 @@
-<?
-require('lib/FreshBooksRequest.php');
+<?php
+
+use Freshbooks\FreshBooksApi;
 
 // Setup the login credentials
 $domain = '';
 $token = '';
-FreshBooksRequest::init($domain, $token);
+FreshBooksApi::init($domain, $token);
 
 /**********************************************
  * Fetch all clients by a specific id
  **********************************************/
-$fb = new FreshBooksRequest('client.list');
+$fb = new FreshBooksApi('client.list');
 $fb->post(array(
     'email' => 'some@email.com'
 ));
@@ -28,7 +29,7 @@ else
 /**********************************************
  * List invoices from a specific client
  **********************************************/
-$fb = new FreshBooksRequest('invoice.list');
+$fb = new FreshBooksApi('invoice.list');
 $fb->post(array(
     'client_id' => 41
 ));
@@ -46,7 +47,7 @@ else
 /**********************************************
  * Create a recurring profile with multiple line items
  **********************************************/
-$fb = new FreshBooksRequest('recurring.create');
+$fb = new FreshBooksApi('recurring.create');
 $fb->post(array(
     'recurring' => array(
         'client_id' => 41,
@@ -70,15 +71,15 @@ $fb->post(array(
 ));
 //print_r($fb->getGeneratedXML());
 $fb->request();
-if($fb->success())
-{
-    $res = $fb->getResponse();
-    $recurrng_id = $res['recurring_id'];
-    // Do something with the recurring_id you were returned
+if($fb->success()) {
+
+	$res = $fb->getResponse();
+	$recurrng_id = $res['recurring_id'];
+	// Do something with the recurring_id you were returned
+
+} else {
+
+	echo $fb->getError();
+	print_r($fb->getResponse());
+
 }
-else
-{
-    echo $fb->getError();
-    print_r($fb->getResponse());
-}
-?>

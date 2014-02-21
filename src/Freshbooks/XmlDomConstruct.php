@@ -1,5 +1,4 @@
-<?php
-namespace JasonReading\Freshbooks;
+<?php namespace Freshbooks;
 
 /**
  * EXTENDS THE DOMDOCUMENT TO IMPLEMENT PERSONAL (UTILITY) METHODS.

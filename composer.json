@@ -1,7 +1,8 @@
 {
-    "name": "JasonReading/FreshBooksRequest",
-    "description": "A simple wrapper for making requests with the FreshBooks API",
+    "name": "Conner/FreshBooks",
+    "description": "Wrapper to the FreshBooks API",
     "license": "Dual-licesnse: MIT and GPL",
+	"keywords": ["freshbooks" "api"],
     "authors": [
         {
             "name": "jboesch",
@@ -11,10 +12,18 @@
             "name": "JasonReading",
             "homepage": "http://jasonreading.com"
         }
+        {
+            "name": "Robert Conner",
+            "homepage": "http://smartersoftware.net"
+        }
     ],
+	"require": {
+		"php": ">=5.4.0",
+		"ext-curl": "*"
+	},
     "autoload": {
         "psr-0": {
-            "JasonReading\\Freshbooks\\": "lib\/"
+            "Freshbooks\\": "src\/"
         }
     }
 }
