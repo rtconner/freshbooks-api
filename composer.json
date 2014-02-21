@@ -1,5 +1,5 @@
 {
-    "name": "Conner/FreshBooks",
+    "name": "conner/freshbooks-api",
     "description": "Wrapper to the FreshBooks API",
     "license": "Dual-licesnse: MIT and GPL",
 	"keywords": ["freshbooks", "api"],
