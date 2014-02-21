@@ -1,4 +1,4 @@
-FreshBooksApi PHP API
+FreshBooks API
 ============
 
 PHP wrapper for the FreshBooks API. Simplifies FreshBooks API XML structure into a PHP array strucure. You need to know the method names and params when you're creating a new FreshBooksApi instance. See all here http://developers.freshbooks.com/
@@ -10,7 +10,7 @@ PHP wrapper for the FreshBooks API. Simplifies FreshBooks API XML structure into
     }
 
 
-## Usage
+#### Sample Code
 
 The XML tag parameters you see on the freshbooks API page are the ones you pass to $fb->post() (as an array)
 
@@ -26,7 +26,7 @@ Example: list clients with an email of some@email.com
 // Method names are the same as found on the freshbooks API
 $fb = new Freshbooks\FreshBooksApi('client.list');
 
-// For complete list of arguments see FreshBooks docs.
+// For complete list of arguments see FreshBooks docs at http://developers.freshbooks.com
 $fb->post(array(
     'email' => 'some@email.com'
 ));
@@ -34,12 +34,11 @@ $fb->post(array(
 $fb->request();
 
 if($fb->success()) {
-    echo 'successful! the full response is in an array below';
-    print_r($fb->getResponse());
-}
-else {
-    echo $fb->getError();
-    print_r($fb->getResponse());
+	echo 'successful! the full response is in an array below';
+	var_dump($fb->getResponse());
+} else {
+	echo $fb->getError();
+	var_dump($fb->getResponse());
 }
 ```
 
@@ -76,7 +75,6 @@ $fb->request();
 
 if($fb->success()) {
     $res = $fb->getResponse();
-    $recurrng_id = $res['recurring_id'];
-    // Do something with the recurring_id you were returned
+    var_dump($res['recurring_id']);
 }
 ```
