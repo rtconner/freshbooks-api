@@ -81,6 +81,6 @@ if($fb->success()) {
 
 #### Credits
 
- - Jordan Boesch - jordan@7shifts.com
+ - Jordan Boesch - http://boedesign.com/
  - Jason Reading - http://jasonreading.com
  - Robert Conner - http://smartersoftware.net
