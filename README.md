@@ -81,6 +81,6 @@ if($fb->success()) {
 
 #### Credits
 
-Jordan Boesch <jordan@7shifts.com> - https://github.com/jboesch/FreshBooksRequest-PHP-API
-Jason Reading - http://jasonreading.com
-Robert Conner - http://smartersoftware.net
+ - Jordan Boesch - jordan@7shifts.com
+ - Jason Reading - http://jasonreading.com
+ - Robert Conner - http://smartersoftware.net
