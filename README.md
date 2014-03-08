@@ -78,3 +78,9 @@ if($fb->success()) {
     var_dump($res['recurring_id']);
 }
 ```
+
+#### Credits
+
+Jordan Boesch <jordan@7shifts.com> - https://github.com/jboesch/FreshBooksRequest-PHP-API
+Jason Reading - http://jasonreading.com
+Robert Conner - http://smartersoftware.net
