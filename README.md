@@ -5,6 +5,10 @@ PHP wrapper for the FreshBooks API. Simplifies FreshBooks API XML structure into
 
 #### Composer Install
 
+    composer require rtconner/freshbooks-api dev-master
+    
+    .. or ..
+    
     "require": {
         "rtconner/freshbooks-api": "dev-master"
     }
