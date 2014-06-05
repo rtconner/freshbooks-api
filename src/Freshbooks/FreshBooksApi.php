@@ -98,7 +98,18 @@ class FreshBooksApi {
     {
         return $this->_success;
     }
-
+    
+    /*
+     * Change the method name to allow for concurrent requests
+     *
+     * @param string $method The method name from the API, like 'client.update' etc
+     * @return null
+     */
+    public function setMethod($method)
+    {
+        $this->_method = $method;
+    }
+    
     /*
      * Get the error (if there was one returned from the request)
      *
