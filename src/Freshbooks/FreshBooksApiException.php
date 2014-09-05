@@ -7,4 +7,4 @@
  * @license    Dual licensed under the MIT and GPL licenses.
  * @version    1.0
  */
-class FreshBooksApiException extends Exception {}
+class FreshBooksApiException extends \Exception {}
