@@ -1,4 +1,6 @@
-<?php namespace Freshbooks;
+<?php
+
+namespace Freshbooks;
 
 /**
  * A simple PHP API wrapper for the FreshBooks API.
@@ -68,15 +70,17 @@ class FreshBooksApi {
         self::$_token = $token;
     }
 
-    /*
-     * Set up the request object and assign a method name
+    /**
+     * Initialize the and store the domain/token for making requests as init
+     * does instead of doing what setMethod does
      *
-     * @param string $method The method name from the API, like 'client.update' etc
-     * @return null
+     * @param string $domain The subdomain like 'yoursite'.freshbooks.com
+     * @param string $token The token found in your account settings area
      */
-    public function __construct($method)
+    public function __construct($domain, $token)
     {
-        $this->_method = $method;
+        $this->domain = $domain;
+        $this->token = $token;
     }
 
     /*
