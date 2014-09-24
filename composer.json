@@ -1,5 +1,5 @@
 {
-    "name": "billotei/freshbooks-api",
+    "name": "rtconner/freshbooks-api",
     "description": "Wrapper to the FreshBooks API",
     "license": "MIT",
 	"keywords": ["freshbooks", "api"],
