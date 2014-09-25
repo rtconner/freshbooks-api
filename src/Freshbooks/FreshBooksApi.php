@@ -19,11 +19,13 @@ class FreshBooksApi {
      * The domain you need when making a request
      */
     protected static $_domain = '';
+    protected $domain = '';
 
     /*
      * The API token you need when making a request
      */
     protected static $_token = '';
+    protected $token = '';
 
     /*
      * The API url we're hitting. {{ DOMAIN }} will get replaced with $domain
@@ -164,20 +166,21 @@ class FreshBooksApi {
      */
     public function request()
     {
-
-        if(!self::$_domain || !self::$_token)
+        if(!$this->domain || !$this->token)
         {
-            throw FreshBooksApiException('You need to call FreshBooksApi::init($domain, $token) with your domain and token.');
+            throw new FreshBooksApiException(
+                'You need to call new FreshBooksApi($domain, $token) or FreshBooksApi::init($domain, $token) with your domain and token.'
+            );
         }
 
         $post_data = $this->getGeneratedXML();
-        $url = str_replace('{{ DOMAIN }}', self::$_domain, $this->_api_url);
+        $url = str_replace('{{ DOMAIN }}', $this->domain, $this->_api_url);
         $ch = curl_init();    // initialize curl handle
         curl_setopt($ch, CURLOPT_URL, $url); // set url to post to
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // return into a variable
         curl_setopt($ch, CURLOPT_TIMEOUT, 40); // times out after 40s
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data); // add POST fields
-        curl_setopt($ch, CURLOPT_USERPWD, self::$_token . ':X');
+        curl_setopt($ch, CURLOPT_USERPWD, $this->token . ':X');
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         $result = curl_exec($ch);
