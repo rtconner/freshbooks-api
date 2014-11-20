@@ -30,7 +30,7 @@ Or using _construct and object instance:
 ```php
 $domain = 'your-subdomain'; // https://your-subdomain.freshbooks.com/
 $token = '1234567890'; // your api token found in your account
-$fb = new FreshBooksApi($domain, $token); 
+$fb = new Freshbooks\FreshBooksApi($domain, $token); 
 ```
 
 Example: list clients with an email of some@email.com
