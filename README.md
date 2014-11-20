@@ -25,6 +25,17 @@ $token = '1234567890'; // your api token found in your account
 Freshbooks\FreshBooksApi::init($domain, $token); 
 ```
 
+Using _construct and object instance:
+
+```php
+$domain = 'your-subdomain'; // https://your-subdomain.freshbooks.com/
+$token = '1234567890'; // your api token found in your account
+$fb = new FreshBooksApi($domain, $token); 
+
+// Method names are the same as found on the freshbooks API
+$fb->setMethod('client.list'); .....
+```
+
 Example: list clients with an email of some@email.com
 
 ```php
@@ -45,17 +56,6 @@ if($fb->success()) {
 	echo $fb->getError();
 	var_dump($fb->getResponse());
 }
-```
-
-Using _construct and object instance:
-
-```php
-$domain = 'your-subdomain'; // https://your-subdomain.freshbooks.com/
-$token = '1234567890'; // your api token found in your account
-$fb = new FreshBooksApi($domain, $token); 
-
-// Method names are the same as found on the freshbooks API
-$fb->setMethod('client.list'); .....
 ```
 
 #### Credits
