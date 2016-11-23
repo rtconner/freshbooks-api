@@ -18,18 +18,16 @@ class FreshBooksApi {
     /*
      * The domain you need when making a request
      */
-    protected static $_domain = '';
     protected $domain = '';
 
     /*
      * The API token you need when making a request
      */
-    protected static $_token = '';
     protected $token = '';
 
     /*
      * The API url we're hitting. {{ DOMAIN }} will get replaced with $domain
-     * when you set FreshBooksApi::init($domain, $token)
+     * when you set `new FreshBooksApi($domain, $token)`
      */
     protected $_api_url = 'https://{{ DOMAIN }}.freshbooks.com/api/2.1/xml-in';
 
@@ -58,19 +56,6 @@ class FreshBooksApi {
      * Holds the response after our request
      */
     protected $_response = array();
-
-    /*
-     * Initialize the and store the domain/token for making requests
-     *
-     * @param string $domain The subdomain like 'yoursite'.freshbooks.com
-     * @param string $token The token found in your account settings area
-     * @return null
-     */
-    public static function init($domain, $token)
-    {
-        self::$_domain = $domain;
-        self::$_token = $token;
-    }
 
     /**
      * Initialize the and store the domain/token for making requests as init
@@ -169,7 +154,7 @@ class FreshBooksApi {
         if(!$this->domain || !$this->token)
         {
             throw new FreshBooksApiException(
-                'You need to call new FreshBooksApi($domain, $token) or FreshBooksApi::init($domain, $token) with your domain and token.'
+                'You need to call new FreshBooksApi($domain, $token) with your domain and token.'
             );
         }
 
