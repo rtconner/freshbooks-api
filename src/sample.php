@@ -5,7 +5,6 @@ use Freshbooks\FreshBooksApi;
 // Setup the login credentials
 $domain = '';
 $token = '';
-FreshBooksApi::init($domain, $token);
 
 /**********************************************
  * Fetch all clients by a specific id
