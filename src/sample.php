@@ -5,12 +5,12 @@ use Freshbooks\FreshBooksApi;
 // Setup the login credentials
 $domain = '';
 $token = '';
-FreshBooksApi::init($domain, $token);
 
 /**********************************************
  * Fetch all clients by a specific id
  **********************************************/
-$fb = new FreshBooksApi('client.list');
+$fb = new FreshBooksApi($domain, $token);
+$fb->setMethod('client.list');
 $fb->post(array(
     'email' => 'some@email.com'
 ));
@@ -29,7 +29,8 @@ else
 /**********************************************
  * List invoices from a specific client
  **********************************************/
-$fb = new FreshBooksApi('invoice.list');
+$fb = new FreshBooksApi($domain, $token);
+$fb->setMethod('invoice.list');
 $fb->post(array(
     'client_id' => 41
 ));
@@ -47,7 +48,8 @@ else
 /**********************************************
  * Create a recurring profile with multiple line items
  **********************************************/
-$fb = new FreshBooksApi('recurring.create');
+$fb = new FreshBooksApi($domain, $token);
+$fb->setMethod('recurring.create');
 $fb->post(array(
     'recurring' => array(
         'client_id' => 41,
