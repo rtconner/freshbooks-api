@@ -19,7 +19,7 @@ PHP wrapper for the FreshBooks API. Simplifies FreshBooks API XML structure into
 The XML tag parameters you see on the freshbooks API page are the ones you pass to $fb->post() (as an array)
 
 ```php
-$domain = 'your-subdomain'; // https://your-subdomain.freshbooks.com/
+$domain = 'your-subdomain'; // Do not include the URL scheme (https://). It will be added automatically
 $token = '1234567890'; // your api token found in your account
 $fb = new Freshbooks\FreshBooksApi($domain, $token); 
 ```
