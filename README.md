@@ -51,3 +51,5 @@ if($fb->success()) {
  - Jordan Boesch - http://boedesign.com/
  - Jason Reading - http://jasonreading.com
  - Robert Conner - http://smartersoftware.net
+ 
+ Test on [RapidAPI](https://rapidapi.com/package/FreshbooksAPI/functions?utm_source=FreshbooksGitHub&utm_medium=button)
