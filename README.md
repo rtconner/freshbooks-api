@@ -48,6 +48,5 @@ if($fb->success()) {
 
 #### Credits
 
- - Jordan Boesch - http://boedesign.com/
  - Jason Reading - http://jasonreading.com
  - Robert Conner - http://smartersoftware.net
